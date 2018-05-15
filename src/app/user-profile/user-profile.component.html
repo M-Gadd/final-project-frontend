@@ -1,0 +1,672 @@
+
+<div class='columns'>
+    <div class='container profile'>
+      <div class='modal' [class.is-active]="modeOn" id='edit-preferences-modal'>
+        <div class='modal-background'></div>
+        <div class='modal-card'>
+          <header class='modal-card-head'>
+            <p class='modal-card-title'>Edit Profile</p>
+            <button (click)="modelActive()" class='delete'></button>
+          </header>
+          <section class='modal-card-body'>
+            <label class='label'>First Name</label>
+            <p class='control'>
+              <input class='input' placeholder='Text input' type='text' value = '{{user.currentUser?.firstName}}'>
+            </p>
+            <label class='label'>Last Name</label>
+            <p class='control has-icon has-icon-right'>
+              <input class='input' placeholder='Text input' type='text' value='{{user.currentUser?.lastName}}'>
+            </p>
+            <label class='label'>Email</label>
+            <p class='control has-icon has-icon-right'>
+              <input class='input' placeholder='Email input' type='text' value='{{user.currentUser?.email}}'>
+              <i class='fa fa-warning'></i>
+              <span class='help is-danger'>This email is invalid</span>
+            </p>
+            <div class='control'>
+              <div class='control-label is-pulled-left'>
+                <label class='label'>Date of Birth</label>
+              </div>
+              <span>
+                <span class='select'>
+                  <select>
+                    <option>Month</option>
+                    <option>With options</option>
+                  </select>
+                </span>
+                <span class='select'>
+                  <select>
+                    <option>Day</option>
+                    <option>With options</option>
+                  </select>
+                </span>
+                <span class='select'>
+                  <select>
+                    <option>Year</option>
+                    <option>With options</option>
+                  </select>
+                </span>
+              </span>
+            </div>
+            <label class='label'>Description</label>
+            <p class='control'>
+              <textarea class='textarea' placeholder='Describe Yourself!'></textarea>
+            </p>
+            <div class='content'>
+              <h1>Optional Information</h1>
+            </div>
+            <label class='label'>Phone Number</label>
+            <p class='control has-icon has-icon-right'>
+              <input class='input' placeholder='Text input' type='text' value='+1 *** *** 0535'>
+            </p>
+            <label class='label'>Work</label>
+            <p class='control has-icon has-icon-right'>
+              <input class='input' placeholder='Text input' type='text' value='Greater Washington Publishing'>
+            </p>
+            <label class='label'>language</label>
+            <p class='control has-icon has-icon-right'>
+              <input class='input' placeholder='Text input' type='text' value='{{user.currentUser?.language}}'>
+            </p>
+          <label class='label'>Nationality</label>
+          <p class='control has-icon has-icon-right'>
+            <input class='input' placeholder='Text input' type='text' value='{{user.currentUser?.nationality}}'>
+          </p>
+          <label class='label'>Fields Of Interest</label>
+          <p class='control has-icon has-icon-right'>
+            <input class='input' placeholder='Text input' type='text' value='{{user.currentUser?.fieldsOfInterest}}'>
+          </p>
+
+          
+          </section>
+          <footer class='modal-card-foot'>
+            <a class='button is-primary modal-save'>Save changes</a>
+            <a (click)="modelActive()" class='button modal-cancel'>Cancel</a>
+          </footer>
+        </div>
+      </div>
+      <div class='section profile-heading'>
+        <div class='columns is-mobile is-multiline'>
+          <div class='column is-2'>
+            <span class='header-icon image user-profile-image'>
+      <img  src={{user.currentUser.image}}>
+      <!-- <img alt='' src='http://placehold.it/300x225'> -->
+            </span>
+            <form>
+            <div class="form-group">
+                <label for="single"></label>
+                <input type="file" class="form-control" name="single" ng2FileSelect [uploader]="uploader" />                                  
+             </div>
+
+             <button type="button" class="btn btn-success btn-s"
+              (click)="uploadImg()" [disabled]="!uploader.getNotUploadedItems().length">
+              <span class="glyphicon glyphicon-upload"></span> Upload
+             </button>
+            </form>
+
+          </div>
+          <div class='column is-4-tablet is-10-mobile name'>
+            <p>
+              <span class='title is-bold'>{{user.currentUser?.firstName}} {{user.currentUser?.lastName}}</span>
+              <br>
+              <a class='button  is-primary is-outlined' (click)="modelActive()" id='edit-preferences' style='margin: 5px 0'>
+                Edit Profile
+              </a>
+              <br>
+            </p>
+            <p class='tagline'>
+              The users profile bio would go here, can be a few lines or more
+            </p>
+          </div>
+          <div class='column is-2-tablet is-4-mobile has-text-centered'>
+            <p class='stat-val'>30</p>
+            <p class='stat-key'>Enrolled</p>
+          </div>
+          <div class='column is-2-tablet is-4-mobile has-text-centered'>
+            <p class='stat-val'>10</p>
+            <p class='stat-key'>Finihsed</p>
+          </div>
+          <div class='column is-2-tablet is-4-mobile has-text-centered'>
+            <p class='stat-val'>3</p>
+            <p class='stat-key'>lists</p>
+          </div>
+        </div>
+      </div>
+      <div class='profile-options is-fullwidth'>
+        <div class='tabs is-fullwidth is-medium'>
+          <ul>
+            <li class='link'>
+              <a>
+                <span class='icon'>
+                  <i class='fa fa-list'></i>
+                </span>
+                <span>Enrolled</span>
+              </a>
+            </li>
+            <li class='link is-active'>
+              <a>
+                <span class='icon'>
+                  <i class='fa fa-thumbs-up'></i>
+                </span>
+                <span>Finished</span>
+              </a>
+            </li>
+            <li class='link'>
+              <a>
+                <span class='icon'>
+                  <i class='fa fa-search'></i>
+                </span>
+                <span>My Searches</span>
+              </a>
+            </li>
+            <li class='link'>
+              <a>
+                <span class='icon'>
+                  <i class='fa fa-balance-scale'></i>
+                </span>
+                <span>Compare</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class='box' style='border-radius: 0px;'>
+        <!-- Main container -->
+        <div class='columns'>
+          <div class='column is-2-tablet user-property-count has-text-centered'>
+            <p class='subtitle is-5'>
+              <strong></strong>
+              123
+              <br>
+              properties
+            </p>
+          </div>
+          <div class='column is-8'>
+            <p class='control has-addons'>
+              <input class='input' placeholder='Search your liked properties' style='width: 100% !important' type='text'>
+              <button class='button'>
+                Search
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class='columns is-mobile'>
+        <div class='column is-3-tablet is-6-mobile'>
+          <div class='card'>
+            <div class='card-image'>
+              <figure class='image is-4by3'>
+                <img alt='' src='http://placehold.it/300x225'>
+              </figure>
+            </div>
+            <div class='card-content'>
+              <div class='content'>
+                <span class='tag is-dark subtitle'>#1</span>
+                <p>Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) </p>
+              </div>
+            </div>
+            <footer class='card-footer'>
+              <a class='card-footer-item'>Compare</a>
+              <a class='card-footer-item'>Share</a>
+              <a class='card-footer-item'>Delete</a>
+            </footer>
+          </div>
+          <br>
+        </div>
+        <div class='column is-3-tablet is-6-mobile'>
+          <div class='card'>
+            <div class='card-image'>
+              <figure class='image is-4by3'>
+                <img alt='' src='http://placehold.it/300x225'>
+              </figure>
+            </div>
+            <div class='card-content'>
+              <div class='content'>
+                <span class='tag is-dark subtitle'>#2</span>
+                <p>Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) </p>
+              </div>
+            </div>
+            <footer class='card-footer'>
+              <a class='card-footer-item'>Compare</a>
+              <a class='card-footer-item'>Share</a>
+              <a class='card-footer-item'>Delete</a>
+            </footer>
+          </div>
+          <br>
+        </div>
+        <div class='column is-3'>
+          <div class='card'>
+            <div class='card-image'>
+              <figure class='image is-4by3'>
+                <img alt='' src='http://placehold.it/300x225'>
+              </figure>
+            </div>
+            <div class='card-content'>
+              <div class='content'>
+                <span class='tag is-dark subtitle'>#3</span>
+                <p>Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) </p>
+              </div>
+            </div>
+            <footer class='card-footer'>
+              <a class='card-footer-item'>Compare</a>
+              <a class='card-footer-item'>Share</a>
+              <a class='card-footer-item'>Delete</a>
+            </footer>
+          </div>
+          <br>
+        </div>
+        <div class='column is-3'>
+          <div class='card'>
+            <div class='card-image'>
+              <figure class='image is-4by3'>
+                <img alt='' src='http://placehold.it/300x225'>
+              </figure>
+            </div>
+            <div class='card-content'>
+              <div class='content'>
+                <span class='tag is-dark subtitle'>#4</span>
+                <p>Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) </p>
+              </div>
+            </div>
+            <footer class='card-footer'>
+              <a class='card-footer-item'>Compare</a>
+              <a class='card-footer-item'>Share</a>
+              <a class='card-footer-item'>Delete</a>
+            </footer>
+          </div>
+          <br>
+        </div>
+      </div>
+      <div class='columns is-mobile'>
+        <div class='column is-3'>
+          <div class='card'>
+            <div class='card-image'>
+              <figure class='image is-4by3'>
+                <img alt='' src='http://placehold.it/300x225'>
+              </figure>
+            </div>
+            <div class='card-content'>
+              <div class='content'>
+                <span class='tag is-dark subtitle'>#5</span>
+                <p>Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) </p>
+              </div>
+            </div>
+            <footer class='card-footer'>
+              <a class='card-footer-item'>Compare</a>
+              <a class='card-footer-item'>Share</a>
+              <a class='card-footer-item'>Delete</a>
+            </footer>
+          </div>
+          <br>
+        </div>
+        <div class='column is-3'>
+          <div class='card'>
+            <div class='card-image'>
+              <figure class='image is-4by3'>
+                <img alt='' src='http://placehold.it/300x225'>
+              </figure>
+            </div>
+            <div class='card-content'>
+              <div class='content'>
+                <span class='tag is-dark subtitle'>#6</span>
+                <p>Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) </p>
+              </div>
+            </div>
+            <footer class='card-footer'>
+              <a class='card-footer-item'>Compare</a>
+              <a class='card-footer-item'>Share</a>
+              <a class='card-footer-item'>Delete</a>
+            </footer>
+          </div>
+          <br>
+        </div>
+        <div class='column is-3'>
+          <div class='card'>
+            <div class='card-image'>
+              <figure class='image is-4by3'>
+                <img alt='' src='http://placehold.it/300x225'>
+              </figure>
+            </div>
+            <div class='card-content'>
+              <div class='content'>
+                <span class='tag is-dark subtitle'>#7</span>
+                <p>Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) - these are unique to the user - they will show up as part of a saved listings' info here - but adding notes to a property does not automatically create a saved listing. Likewise, removing this proeprty from saved listings does not auto remove the notes.</p>
+              </div>
+            </div>
+            <footer class='card-footer'>
+              <a class='card-footer-item'>Compare</a>
+              <a class='card-footer-item'>Share</a>
+              <a class='card-footer-item'>Delete</a>
+            </footer>
+          </div>
+          <br>
+        </div>
+        <div class='column is-3'>
+          <div class='card'>
+            <div class='card-image'>
+              <figure class='image is-4by3'>
+                <img alt='' src='http://placehold.it/300x225'>
+              </figure>
+            </div>
+            <div class='card-content'>
+              <div class='content'>
+                <span class='tag is-dark subtitle'>#8</span>
+                <p>Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) - these are unique to the user - they will show up as part of a saved listings' info here - but adding notes to a property does not automatically create a saved listing. Likewise, removing this proeprty from saved listings does not auto remove the notes.</p>
+              </div>
+            </div>
+            <footer class='card-footer'>
+              <a class='card-footer-item'>Compare</a>
+              <a class='card-footer-item'>Share</a>
+              <a class='card-footer-item'>Delete</a>
+            </footer>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+<!-- <br>
+<div class="columns">
+  <div class="is-one-third">
+    <figure class="image is-128x128">
+      <img src="https://bulma.io/images/placeholders/128x128.png">
+    </figure>
+    <button>Edit Picture</button>
+    
+  </div>
+  
+  
+  <div  class="is-two-thirds">
+    
+  <h2 class="title is-bold ">{{user.currentUser?.firstName}} {{user.currentUser?.lastName}} </h2>
+
+  <a class="button edit-perf is-primary is-outlined" routerLink="/user/{{user.currentUser?._id}}/edit">Edit Profile</a> -->
+
+  <!-- %a#edit-preferences.button.is-primary.is-outlined{href: "#",style: "margin: 5px 0"} -->
+  <!-- <div class="column is-2-tablet is-4-mobile has-text-centered">
+    <p class="stat-val">30</p>
+    <p class="stat-key">Searches</p>
+  </div>
+
+  <div class="column is-2-tablet is-4-mobile has-text-centered">
+      <p class="stat-val">10</p>
+      <p class="stat-key">Likes</p>
+    </div>
+
+    <div class="column is-2-tablet is-4-mobile has-text-centered">
+        <p class="stat-val">3</p>
+        <p class="stat-key">Lists</p>
+      </div> -->
+
+
+  <!-- .column.is-2-tablet.is-4-mobile.has-text-centered
+  %p.stat-val 30
+  %p.stat-key searches
+.column.is-2-tablet.is-4-mobile.has-text-centered
+  %p.stat-val 10
+  %p.stat-key likes
+.column.is-2-tablet.is-4-mobile.has-text-centered
+  %p.stat-val 3
+  %p.stat-key lists
+   -->
+  
+
+  <!-- <br>
+  <a routerLink="/user/{{user.currentUser?._id}}/edit"> Edit Profile</a>
+  </div> -->
+
+
+  <!-- <a routerLink="{{getUserService().currentUser.role}}/{{getUserService().currentUser._id}}/edit"></a> -->
+<!-- </div> -->
+
+
+<!-- $(() => {
+  $('#edit-preferences').click(function(){
+   $('#edit-preferences-modal').addClass('is-active');
+  });
+  $('.modal-card-head button.delete, .modal-save, .modal-cancel').click(function(){
+    $('#edit-preferences-modal').removeClass('is-active');
+  });
+}); -->
+  
+  
+
+
+<!-- .columns
+  .container.profile
+    -# Edit Preferences Modal Start
+    .modal#edit-preferences-modal
+      .modal-background
+      .modal-card
+        %header.modal-card-head
+          %p.modal-card-title Edit Preferences
+          %button.delete
+        %section.modal-card-body
+          %label.label Name
+          %p.control
+            %input.input{:placeholder => "Text input", :type => "text"}/
+          %label.label Username
+          %p.control.has-icon.has-icon-right
+            %input.input{:placeholder => "Text input", :type => "text", :value => "pmillerk"}/
+          %label.label Email
+          %p.control.has-icon.has-icon-right
+            %input.input{:placeholder => "Email input", :type => "text", :value => "hello@"}/
+            %i.fa.fa-warning
+            %span.help.is-danger This email is invalid
+          .control
+            .control-label.is-pulled-left
+              %label.label Date of Birth
+            %span
+              %span.select
+                %select
+                  %option Month
+                  %option With options
+              %span.select
+                %select
+                  %option Day
+                  %option With options
+              %span.select
+                %select
+                  %option Year
+                  %option With options
+          %label.label Description
+          %p.control
+            %textarea.textarea{:placeholder => "Describe Yourself!"}
+          .content
+            %h1 Optional Information
+          %label.label Phone Number
+          %p.control.has-icon.has-icon-right
+            %input.input{:placeholder => "Text input", :type => "text", :value => "+1 *** *** 0535"}
+          %label.label Work
+          %p.control.has-icon.has-icon-right
+            %input.input{:placeholder => "Text input", :type => "text", :value => "Greater Washington Publishing"}
+          %label.label School
+          %p.control.has-icon.has-icon-right
+            %input.input{:placeholder => "Text input", :type => "text", :value => "George Mason University"}
+        %footer.modal-card-foot
+          %a.button.is-primary.modal-save Save changes
+          %a.button.modal-cancel Cancel
+        -# Edit Preferences Modal End
+    .section.profile-heading
+      .columns.is-mobile.is-multiline
+        .column.is-2
+          %span.header-icon.user-profile-image
+            %img{:alt => "", :src => "http://placehold.it/300x225"}
+        .column.is-4-tablet.is-10-mobile.name
+          %p
+            %span.title.is-bold Paul Miller
+            %br/
+            %a#edit-preferences.button.is-primary.is-outlined{href: "#",style: "margin: 5px 0"}
+              Edit Preferences
+            %br/
+          %p.tagline
+            The users profile bio would go here, of course. It could be two lines or more or whatever. We should probably limit the amount of characters to ~500 at most though.
+        .column.is-2-tablet.is-4-mobile.has-text-centered
+          %p.stat-val 30
+          %p.stat-key searches
+        .column.is-2-tablet.is-4-mobile.has-text-centered
+          %p.stat-val 10
+          %p.stat-key likes
+        .column.is-2-tablet.is-4-mobile.has-text-centered
+          %p.stat-val 3
+          %p.stat-key lists
+    .profile-options.is-fullwidth
+      .tabs.is-fullwidth.is-medium
+        %ul
+          %li.link
+            %a
+              %span.icon
+                %i.fa.fa-list
+              %span My Lists
+          %li.link.is-active
+            %a
+              %span.icon
+                %i.fa.fa-thumbs-up
+              %span My Likes
+          %li.link
+            %a
+              %span.icon
+                %i.fa.fa-search
+              %span My Searches
+          %li.link
+            %a
+              %span.icon
+                %i.fa.fa-balance-scale
+              %span Compare
+    .box{style: "border-radius: 0px;"}
+      / Main container
+      .columns
+        .column.is-2-tablet.user-property-count.has-text-centered
+          %p.subtitle.is-5
+            %strong
+            123
+            %br/
+            properties
+        .column.is-8
+          %p.control.has-addons
+            %input.input{:placeholder => "Search your liked properties", :type => "text", style: "width: 100% !important"}/
+            %button.button
+              Search
+    .columns.is-mobile
+      .column.is-3-tablet.is-6-mobile
+        .card
+          .card-image
+            %figure.image.is-4by3
+              %img{:alt => "", :src => "http://placehold.it/300x225"}/
+          .card-content
+            .content
+              %span.tag.is-dark.subtitle #1
+              %p Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) - these are unique to the user - they will show up as part of a saved listings' info here - but adding notes to a property does not automatically create a saved listing. Likewise, removing this proeprty from saved listings does not auto remove the notes.
+          %footer.card-footer
+            %a.card-footer-item Compare
+            %a.card-footer-item Share
+            %a.card-footer-item Delete
+        %br/
+      .column.is-3-tablet.is-6-mobile
+        .card
+          .card-image
+            %figure.image.is-4by3
+              %img{:alt => "", :src => "http://placehold.it/300x225"}/
+          .card-content
+            .content
+              %span.tag.is-dark.subtitle #2
+              %p Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) - these are unique to the user - they will show up as part of a saved listings' info here - but adding notes to a property does not automatically create a saved listing. Likewise, removing this proeprty from saved listings does not auto remove the notes.
+          %footer.card-footer
+            %a.card-footer-item Compare
+            %a.card-footer-item Share
+            %a.card-footer-item Delete
+        %br/
+      .column.is-3
+        .card
+          .card-image
+            %figure.image.is-4by3
+              %img{:alt => "", :src => "http://placehold.it/300x225"}/
+          .card-content
+            .content
+              %span.tag.is-dark.subtitle #3
+              %p Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) - these are unique to the user - they will show up as part of a saved listings' info here - but adding notes to a property does not automatically create a saved listing. Likewise, removing this proeprty from saved listings does not auto remove the notes.
+          %footer.card-footer
+            %a.card-footer-item Compare
+            %a.card-footer-item Share
+            %a.card-footer-item Delete
+        %br/
+      .column.is-3
+        .card
+          .card-image
+            %figure.image.is-4by3
+              %img{:alt => "", :src => "http://placehold.it/300x225"}/
+          .card-content
+            .content
+              %span.tag.is-dark.subtitle #4
+              %p Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) - these are unique to the user - they will show up as part of a saved listings' info here - but adding notes to a property does not automatically create a saved listing. Likewise, removing this proeprty from saved listings does not auto remove the notes.
+          %footer.card-footer
+            %a.card-footer-item Compare
+            %a.card-footer-item Share
+            %a.card-footer-item Delete
+        %br/
+    .columns.is-mobile
+      .column.is-3
+        .card
+          .card-image
+            %figure.image.is-4by3
+              %img{:alt => "", :src => "http://placehold.it/300x225"}/
+          .card-content
+            .content
+              %span.tag.is-dark.subtitle #5
+              %p Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) - these are unique to the user - they will show up as part of a saved listings' info here - but adding notes to a property does not automatically create a saved listing. Likewise, removing this proeprty from saved listings does not auto remove the notes.
+          %footer.card-footer
+            %a.card-footer-item Compare
+            %a.card-footer-item Share
+            %a.card-footer-item Delete
+        %br/
+      .column.is-3
+        .card
+          .card-image
+            %figure.image.is-4by3
+              %img{:alt => "", :src => "http://placehold.it/300x225"}/
+          .card-content
+            .content
+              %span.tag.is-dark.subtitle #6
+              %p Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) - these are unique to the user - they will show up as part of a saved listings' info here - but adding notes to a property does not automatically create a saved listing. Likewise, removing this proeprty from saved listings does not auto remove the notes.
+          %footer.card-footer
+            %a.card-footer-item Compare
+            %a.card-footer-item Share
+            %a.card-footer-item Delete
+        %br/
+      .column.is-3
+        .card
+          .card-image
+            %figure.image.is-4by3
+              %img{:alt => "", :src => "http://placehold.it/300x225"}/
+          .card-content
+            .content
+              %span.tag.is-dark.subtitle #7
+              %p Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) - these are unique to the user - they will show up as part of a saved listings' info here - but adding notes to a property does not automatically create a saved listing. Likewise, removing this proeprty from saved listings does not auto remove the notes.
+          %footer.card-footer
+            %a.card-footer-item Compare
+            %a.card-footer-item Share
+            %a.card-footer-item Delete
+        %br/
+      .column.is-3
+        .card
+          .card-image
+            %figure.image.is-4by3
+              %img{:alt => "", :src => "http://placehold.it/300x225"}/
+          .card-content
+            .content
+              %span.tag.is-dark.subtitle #8
+              %p Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) - these are unique to the user - they will show up as part of a saved listings' info here - but adding notes to a property does not automatically create a saved listing. Likewise, removing this proeprty from saved listings does not auto remove the notes.
+          %footer.card-footer
+            %a.card-footer-item Compare
+            %a.card-footer-item Share
+            %a.card-footer-item Delete
+        %br/ -->
+
+
+
+

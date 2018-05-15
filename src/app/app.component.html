@@ -1,21 +1,95 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
+<div class="container is-fluid">
+    <!-- <div class="notification"> -->
+<header>
+  
+  
+    <nav class="navbar">
+      <a class="navbar-item" routerLink="/">Home</a>
+      
+
+      <span class="navbar-item" *ngIf = "!getUserService().currentUser" >
+          <a class="navbar-item"  routerLink="/signup">Sign Up</a>
+        
+          <a  class="navbar-item" routerLink="user/login">Log In</a>
+      </span>
+      
+      <span class="navbar-item" *ngIf = "getUserService().currentUser">
+          <a class="navbar-item" routerLink="/{{getUserService().currentUser.role}}/{{getUserService().currentUser._id}}">Profile</a>
+          <a class="navbar-item" routerLink="/{{getUserService().currentUser.role}}/{{getUserService().currentUser._id}}/courses">My Courses</a> 
+          
+          <div class="dropdown is-hoverable">
+              <div class="dropdown-trigger">
+                <a class="navbar-item" aria-haspopup="true" aria-controls="dropdown-menu4">
+                  <span>Categories</span>
+                  <span class="icon is-small">
+                    <i class="fas fa-globe" aria-hidden="true"> </i>
+                  </span>
+                </a>
+              </div>
+              <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                <div class="dropdown-content">
+                  <div class="dropdown-item">
+                      <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+                          <div class="dropdown-content">
+                            <a href="#" class="dropdown-item">
+                              Development
+                            </a>
+                            <a href="#" class="dropdown-item">
+                              Business
+                            </a>
+                            <a href="#" class="dropdown-item">
+                              Software Development
+                            </a>
+                            <a href="#" class="dropdown-item">
+                              Personal Development
+                            </a>
+                            <a href="#" class="dropdown-item">
+                              Design
+                            </a>
+                            <a href="#" class="dropdown-item">
+                              Marketing
+                            </a>
+                            <a href="#" class="dropdown-item">
+                              Lifestyle
+                            </a>
+                            <a href="#" class="dropdown-item">
+                              Photography
+                            </a>
+                            <a href="#" class="dropdown-item">
+                               Health & Fitness
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                              More
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- <p class='control has-addons navbar-item'> -->
+                  <input class='input navbar-item' placeholder='Search Courses' style='width: 60% !important' type='text'>
+                  <a class='navbar-item'>
+                    Search
+                  </a>
+                
+              
+            
+          
+          <b class="navbar-item"> Hello {{getUserService().currentUser.firstName}}</b>          
+          <a class=" button navbar-item is-danger" (click)="logoutClick()">Log Out</a>
+        </span>
+    </nav>
+  </header>
+
+  <a *ngIf = "getUserService().currentUser"  class="navbar-item" routerLink="/admin">Admin</a>        
+  
 
 <router-outlet></router-outlet>
+
+<!-- </div> -->
+  
+</div>

@@ -1,0 +1,70 @@
+
+<div class="container center">
+<form  (ngSubmit)="addCourseSubmit()">
+
+    <h2 class="subtitle texCen">Add Course</h2>
+
+    <div class="field" >
+            <p class="control has-icons-left has-icons-right">
+              <input [(ngModel)]="addCreds.name" class="input is-primary" name="name" type="text" placeholder="Name">
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
+
+<div class="field" >
+    <p class="control has-icons-left has-icons-right">
+        <input [(ngModel)]="addCreds.description" class="input is-primary" name="description" type="text" placeholder="description">
+        <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+        </span>
+        <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+        </span>
+    </p>
+    </div>
+
+<div class="field" >
+    <p class="control has-icons-left has-icons-right">
+      <input [(ngModel)]="addCreds.category" class="input is-primary" name="category" type="text" placeholder="category">
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </p>
+    <!-- <p class="help is-success">This username is available</p>
+    <p class="help is-danger">This email is invalid</p> -->
+  </div>
+
+  <div class="field">
+    <p class="control has-icons-left">
+      <input [(ngModel)]="addCreds.language" class="input is-primary " name="language" type="text" placeholder="language">
+      <span class="icon is-small is-left">
+        <i class="fas fa-lock"></i>
+      </span>
+    </p>
+</div>
+
+<!-- <div class="field">
+        <p class="control has-icons-left">
+          <input [(ngModel)]="formCreds.password" class="input is-primary " name="password" type="password" placeholder=" Confirm Password">
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+    </div> -->
+    
+<button class="button is-primary buttonn">Add</button>
+  
+ 
+  
+</form>
+
+</div>
+

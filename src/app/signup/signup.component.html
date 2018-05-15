@@ -1,0 +1,120 @@
+
+<div *ngIf="closeChoice" class="stuTeac field">
+<button class="button choiceBtn is-primary" (click)="onUserChoice()">Student</button>
+<button class="button choiceBtn is-primary" (click)="onTeacherChoice() ">Teacher</button>
+</div>
+
+<div *ngIf="showForm">
+
+
+    <div class="container center">
+
+<form  (ngSubmit)="signupSubmit()">
+
+    <h2 class="subtitle texCen">Sign Up</h2>
+
+    <div class="field" >
+            <p class="control has-icons-left has-icons-right">
+              <input [(ngModel)]="formCreds.firstName" class="input is-primary" name="firstName" type="text" placeholder="Name">
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
+
+<div class="field" >
+    <p class="control has-icons-left has-icons-right">
+        <input [(ngModel)]="formCreds.lastName" class="input is-primary" name="lastName" type="text" placeholder="Last Name">
+        <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+        </span>
+        <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+        </span>
+    </p>
+    </div>
+
+<div class="field" >
+    <p class="control has-icons-left has-icons-right">
+      <input [(ngModel)]="formCreds.email" class="input is-primary" name="email" type="email" placeholder="Email">
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </p>
+    <p class="help is-success">This username is available</p>
+    <p class="help is-danger">This email is invalid</p>
+  </div>
+
+  <div class="field">
+    <p class="control has-icons-left">
+      <input [(ngModel)]="formCreds.password" class="input is-primary " name="password" type="password" placeholder="Password">
+      <span class="icon is-small is-left">
+        <i class="fas fa-lock"></i>
+      </span>
+    </p>
+</div>
+
+<div class="field">
+        <p class="control has-icons-left">
+          <input [(ngModel)]="formCreds.password" class="input is-primary " name="password" type="password" placeholder=" Confirm Password">
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+    </div>
+    
+<button class="button is-primary buttonn">Sign Up</button>
+  
+ 
+  
+</form>
+</div>
+
+</div>
+
+<!-- <h2>Sign Up</h2> -->
+<!-- <form  (ngSubmit)="signupSubmit()" >
+  <label [ngClass]="{bk: trial}">
+    First Name:
+    <input type="text" [(ngModel)]="formCreds.firstName" name="firstName" placeholder="your First Name">
+  </label>
+
+  <br>
+
+  <label>
+      Last Name:
+      <input type="text" [(ngModel)]="formCreds.lastName" name="LastName" placeholder="your First Name">
+    </label>
+
+    <br>
+
+    <label>
+        Email:
+        <input type="email" [(ngModel)]="formCreds.email" name="email" placeholder="email">
+      </label>
+  
+      <br>
+  
+  <label>
+      password:
+      <input type="password" [(ngModel)]="formCreds.password" name="password" placeholder="*****">
+  </label>
+
+    <br>
+
+    <label>
+        Confirm password:
+        <input type="password" [(ngModel)]="formCreds.password" name="c-password" placeholder="*****">
+    </label>
+
+    <br>
+
+ 
+    <button>Sign Up</button>
+</form> -->

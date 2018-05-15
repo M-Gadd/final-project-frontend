@@ -1,0 +1,10 @@
+<h2>My Courses</h2>
+
+<ul *ngFor= "let oneCourse of courses">
+  <li>{{oneCourse.name}}</li>
+  <li>{{oneCourse.language}}</li>
+</ul>
+
+<a class='button is-primary is-outlined' routerLink="/course/add"  id='add-course' style='margin: 5px 0'>
+  Add New Course
+  </a>

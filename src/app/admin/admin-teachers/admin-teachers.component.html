@@ -1,0 +1,51 @@
+<h2>Teachers</h2>
+
+
+<!-- <ul>
+  <li *ngFor="let oneTeacher of teachers">
+    <h3>{{oneTeacher.firstName}}</h3>
+    <p> {{oneTeacher.lastName}}</p> -->
+    <!-- <img src="{{oneUser.image}} " width="250px" alt=""> -->
+    <!-- <a [routerLink]="['/phone', onePhone._id]">See Details</a> -->
+
+  <!-- </li>
+</ul> -->
+
+
+
+<div *ngFor="let oneTeacher of teachers" class='section profile-heading'>
+    <div class='columns is-mobile is-multiline'>
+      <div class='column is-2'>
+        <span class='header-icon image is-128x128 user-profile-image'>
+  <img src="https://bulma.io/images/placeholders/128x128.png">
+  <!-- <img alt='' src='http://placehold.it/300x225'> -->
+        </span>
+          <!-- <button>Edit Picture</button> -->
+      </div>
+      <div class='column is-4-tablet is-10-mobile name'>
+        <p>
+          <span class='title is-bold'>{{oneTeacher.firstName}} {{oneTeacher.lastName}}</span>
+          <br>
+          <a class='button  is-primary is-outlined'  style='margin: 5px 0'>
+            Check Profile
+          </a>
+          <br>
+        </p>
+        <p class='tagline'>
+          The users profile bio would go here, can be a few lines or more
+        </p>
+      </div>
+      <div class='column is-2-tablet is-4-mobile has-text-centered'>
+        <p class='stat-val'>30</p>
+        <p class='stat-key'>Courses</p>
+      </div>
+      <div class='column is-2-tablet is-4-mobile has-text-centered'>
+        <p class='stat-val'>10</p>
+        <p class='stat-key'>Students</p>
+      </div>
+      <div class='column is-2-tablet is-4-mobile has-text-centered'>
+        <p class='stat-val'>3</p>
+        <p class='stat-key'>lists</p>
+      </div>
+    </div>
+  </div>
