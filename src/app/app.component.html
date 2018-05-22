@@ -4,7 +4,9 @@
 <header>
   
   
-    <nav class="navbar">
+    <nav class="navbar is-dark ">
+      <!-- <a class=" title navbar-brand">E-levate</a> -->
+      <p *ngIf="!user.currentUser" class="navbar-brand is-primary navbar-item"><span class="logo">E</span>-levate</p>
       <a class="navbar-item" routerLink="/">Home</a>
       
 
@@ -15,8 +17,8 @@
       </span>
       
       <span class="navbar-item" *ngIf = "getUserService().currentUser">
-          <a class="navbar-item" routerLink="/{{getUserService().currentUser.role}}/{{getUserService().currentUser._id}}">Profile</a>
-          <a class="navbar-item" routerLink="/{{getUserService().currentUser.role}}/{{getUserService().currentUser._id}}/courses">My Courses</a> 
+          <a class="navbar-item" routerLink="/{{user.currentUser.role}}/{{user.currentUser._id}}">Profile</a>
+          <a class="navbar-item" routerLink="/{{user.currentUser.role}}/{{user.currentUser._id}}/courses">My Courses</a> 
           
           <div class="dropdown is-hoverable">
               <div class="dropdown-trigger">
@@ -71,13 +73,25 @@
               </div>
 
               <!-- <p class='control has-addons navbar-item'> -->
-                  <input class='input navbar-item' placeholder='Search Courses' style='width: 60% !important' type='text'>
+                  <input  [(ngModel)]="searchWord" class='input navbar-item' placeholder='Search Courses' style='width: 60% !important' type='text'>
                   <a class='navbar-item'>
                     Search
                   </a>
+
+                  <!-- <div *ngIf="user.currentUser" class="">
+                      <div class="">
+                          <div *ngFor="let oneCourse of courses | searchPipe:searchWord" class="card" style="width:200px" >
+                              <img class="card-img-top" width="200px" src={{oneFood.image}} alt="Card image cap">
+                              <div class="card-body">
+                                <h5 class="card-title">{{oneCourse.name}}</h5>
+                                <p class="card-text">{{oneFood.language}}</p>
+                                <!-- <button (click)="todayFood(oneFood)" class="btn btn-primary">Today's List</button> -->
+                              <!-- </div> -->
+                            <!-- </div> -->
+                      <!-- </div> -->
+                    <!-- </div>  -->
                 
               
-            
           
           <b class="navbar-item"> Hello {{getUserService().currentUser.firstName}}</b>          
           <a class=" button navbar-item is-danger" (click)="logoutClick()">Log Out</a>
@@ -85,11 +99,18 @@
     </nav>
   </header>
 
-  <a *ngIf = "getUserService().currentUser"  class="navbar-item" routerLink="/admin">Admin</a>        
-  
+  <a *ngIf = "user.currentUser && (user.currentUser.role == 'user' || user.currentUser.role == 'admin' )"  class="button is-warning adminBtn" routerLink="/admin">Admin</a>  
 
-<router-outlet></router-outlet>
-
-<!-- </div> -->
   
+  
+  
+  <router-outlet></router-outlet>
+  
+  
+  
+  <footer>
+    <!-- <a routerLink="">Contact Us</a> -->
+  </footer>
+  <!-- </div> -->
 </div>
+  

@@ -1,0 +1,108 @@
+<h2>Course Details</h2>
+
+<!-- <div width="300px">
+  <img src={{course?.image}} alt="">
+</div>
+
+
+<div>
+  <p>{{course?.name}}</p>
+  <p>{{course?.language}}</p>
+  <p>{{course?.category}}</p>
+
+  <p>{{course?.description}}</p>
+
+</div> -->
+
+<div class="modal" [class.is-active]="courseEdit" id="edit-course">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Edit Course</p>
+        <button (click)="courseOn()" class="delete"></button>
+      </header>
+      <section class="modal-card-body">
+        <label class="label">Name</label>
+        <p class="control">
+          <input [(ngModel)]="editCreds.name" class="input" placeholder="Text input" type="text" value = "{{course?.name}}">
+        </p>
+        <label class="label">Description</label>
+        <p class="control">
+          <textarea [(ngModel)]="editCreds.description" class="textarea" placeholder="Describe Yourself!" value="{{course?.description}}"></textarea>
+        </p>
+        <label class="label">Category</label>
+        <p class="control has-icon has-icon-right">
+          <input [(ngModel)]="editCreds.category" class="input" placeholder="Text input" type="text" value="{{course?.category}}">
+        </p>
+        <label class="label">language</label>
+        <p class="control has-icon has-icon-right">
+          <input [(ngModel)]="editCreds.language" class="input" placeholder="Text input" type="text" value="{{course?.language}}">
+        </p>
+      </section>
+      <footer class="modal-card-foot">
+        <a (click)="onEditSubmit()" class="button is-primary modal-save">Save changes</a>
+        <a (click)="courseOn()" class="button modal-cancel">Cancel</a>
+      </footer>
+    </div>
+  </div>
+
+
+
+<div class='section profile-heading'>
+    <div class='columns is-mobile is-multiline'>
+      <div class='resizing column is-2'>
+        <span class='header-icon image is-128x128 user-profile-image'>
+  <img  src={{course?.image}}>
+  <!-- <img alt='' src='http://placehold.it/300x225'> -->
+        </span>
+        <form>
+        <div class="form-group">
+            <label for="single"></label>
+            <input type="file" class="form-control" name="single" ng2FileSelect [uploader]="uploaderImg" />                                  
+         </div>
+
+         <button type="button" class="button is-info is-outlined"
+          (click)="uploadImg()" [disabled]="!uploaderImg.getNotUploadedItems().length">
+          <span class="glyphicon glyphicon-upload"></span> Upload Picture
+         </button>
+        </form>
+        <br>
+        <form>
+            <div class="form-group">
+                <label for="video"></label>
+                <input type="file" class="form-control" name="video" ng2FileSelect [uploader]="uploaderVid" />                                  
+             </div>
+    
+             <button type="button" class="button is-info is-outlined"
+              (click)="uploadVid()" [disabled]="!uploaderVid.getNotUploadedItems().length">
+              <span class="glyphicon glyphicon-upload"></span> Upload Video
+             </button>
+            </form>
+
+      </div>
+      <div class=' billy '>
+        <p>
+          <span class='title is-bold'>{{course?.name}}</span>
+          <br>
+          <a class ='button is-primary is-outlined' (click)="courseOn()" id ='edit-course' style ='margin: 5px 0'>
+            Edit Course
+          </a>
+          <br>
+        </p>
+        <p class='tagline'>
+          {{course?.description}}
+        </p>
+      </div>
+
+
+      <!-- <p>{{course.videos.vidName}}</p>
+
+      <ul *ngFor="let oneVideo of course?.videos">
+          <li>{{oneVideo.vidName}}</li>
+          <video src={{oneVideo.videoUrl}}></video>          
+
+        </ul> -->
+
+
+
+

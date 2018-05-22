@@ -1,6 +1,23 @@
 <h2>My Courses</h2>
 
-<ul *ngFor= "let oneCourse of courses">
-  <li>{{oneCourse.name}}</li>
-  <li>{{oneCourse.language}}</li>
-</ul>
+
+<div width="200px" *ngFor= "let oneCourse of courses" class="card">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img width="200px" src={{oneCourse.image}} alt="Placeholder image">
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <!-- <figure class="image is-48x48"> -->
+            <!-- <img width="50px"  src={{user.currecntUser.image}} alt=""> -->
+          <!-- </figure> -->
+        </div>
+        <div class="media-content">
+          <p class="title is-4">{{oneCourse?.name}}</p>
+          <p class="subtitle is-6">{{user.currentUser.name}}</p>
+          <a class = "button is-primary is-outlined" [routerLink] = "['/', user.currentUser?.role, user.currentUser?._id, 'courses', oneCourse._id ]"> 
+            See Details</a>
+        </div>
+      </div>

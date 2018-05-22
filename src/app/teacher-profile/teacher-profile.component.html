@@ -2,48 +2,48 @@
 
 <a routerLink="/teacher/{{teacher.currentUser._id}}/edit"> Edit Profile</a> -->
 
-<div class='columns'>
-    <div class='container profile'>
-      <div class='modal' [class.is-active]="modeOn" id='edit-preferences-modal'>
-        <div class='modal-background'></div>
-        <div class='modal-card'>
-          <header class='modal-card-head'>
-            <p class='modal-card-title'>Edit Profile</p>
-            <button (click)="modelActive()" class='delete'></button>
+<div class="columns">
+    <div class="container profile">
+      <div class="modal" [class.is-active]="modeOn" id="edit-preferences-modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Edit Profile</p>
+            <button (click)="modelActive()" class="delete"></button>
           </header>
-          <section class='modal-card-body'>
-            <label class='label'>First Name</label>
-            <p class='control'>
-              <input class='input' placeholder='Text input' type='text' value = '{{teacher.currentUser?.firstName}}'>
+          <section class="modal-card-body">
+            <label class="label">First Name</label>
+            <p class="control">
+              <input class="input" placeholder="Text input" type="text" value = "{{teacher.currentUser?.firstName}}">
             </p>
-            <label class='label'>Last Name</label>
-            <p class='control has-icon has-icon-right'>
-              <input class='input' placeholder='Text input' type='text' value='{{teacher.currentUser?.lastName}}'>
+            <label class="label">Last Name</label>
+            <p class="control has-icon has-icon-right">
+              <input class="input" placeholder="Text input" type="text" value="{{teacher.currentUser?.lastName}}">
             </p>
-            <label class='label'>Email</label>
-            <p class='control has-icon has-icon-right'>
-              <input class='input' placeholder='Email input' type='text' value='{{teacher.currentUser?.email}}'>
-              <i class='fa fa-warning'></i>
-              <span class='help is-danger'>This email is invalid</span>
+            <label class="label">Email</label>
+            <p class="control has-icon has-icon-right">
+              <input class="input" placeholder="Email input" type="text" value="{{teacher.currentUser?.email}}">
+              <i class="fa fa-warning"></i>
+              <!-- <span class="help is-danger">This email is invalid</span> -->
             </p>
-            <div class='control'>
-              <div class='control-label is-pulled-left'>
-                <label class='label'>Date of Birth</label>
+            <div class="control">
+              <div class="control-label is-pulled-left">
+                <label class="label">Date of Birth</label>
               </div>
               <span>
-                <span class='select'>
+                <span class="select">
                   <select>
                     <option>Month</option>
                     <option>With options</option>
                   </select>
                 </span>
-                <span class='select'>
+                <span class="select">
                   <select>
                     <option>Day</option>
                     <option>With options</option>
                   </select>
                 </span>
-                <span class='select'>
+                <span class="select">
                   <select>
                     <option>Year</option>
                     <option>With options</option>
@@ -51,164 +51,164 @@
                 </span>
               </span>
             </div>
-            <label class='label'>Description</label>
-            <p class='control'>
-              <textarea class='textarea' placeholder='Describe Yourself!'></textarea>
+            <label class="label">Description</label>
+            <p class="control">
+              <textarea class="textarea" placeholder="Describe Yourself!"></textarea>
             </p>
-            <div class='content'>
+            <div class="content">
               <h1>Optional Information</h1>
             </div>
-            <label class='label'>Phone Number</label>
-            <p class='control has-icon has-icon-right'>
-              <input class='input' placeholder='Text input' type='text' value='+1 *** *** 0535'>
+            <label class="label">Phone Number</label>
+            <p class="control has-icon has-icon-right">
+              <input class="input" placeholder="Text input" type="text" value="+1 *** *** 0535">
             </p>
-            <label class='label'>Work</label>
-            <p class='control has-icon has-icon-right'>
-              <input class='input' placeholder='Text input' type='text' value='Greater Washington Publishing'>
+            <label class="label">Work</label>
+            <p class="control has-icon has-icon-right">
+              <input class="input" placeholder="Text input" type="text" value="Greater Washington Publishing">
             </p>
-            <label class='label'>language</label>
-            <p class='control has-icon has-icon-right'>
-              <input class='input' placeholder='Text input' type='text' value='{{teacher.currentUser?.language}}'>
+            <label class="label">language</label>
+            <p class="control has-icon has-icon-right">
+              <input class="input" placeholder="Text input" type="text" value="{{teacher.currentUser?.language}}">
             </p>
-          <label class='label'>Nationality</label>
-          <p class='control has-icon has-icon-right'>
-            <input class='input' placeholder='Text input' type='text' value='{{teacher.currentUser?.nationality}}'>
+          <label class="label">Nationality</label>
+          <p class="control has-icon has-icon-right">
+            <input class="input" placeholder="Text input" type="text" value="{{teacher.currentUser?.nationality}}">
           </p>
-          <label class='label'>Fields Of Speciality</label>
-          <p class='control has-icon has-icon-right'>
-            <input class='input' placeholder='Text input' type='text' value='{{teacher.currentUser?.fieldsOfSpeciality}}'>
+          <label class="label">Fields Of Speciality</label>
+          <p class="control has-icon has-icon-right">
+            <input class="input" placeholder="Text input" type="text" value="{{teacher.currentUser?.fieldsOfSpeciality}}">
           </p>
 
-          <label class='label'> Qualifications </label>
-          <p class='control has-icon has-icon-right'>
-            <input class='input' placeholder='Text input' type='text' value='{{teacher.currentUser?.qualifications}}'>
+          <label class="label"> Qualifications </label>
+          <p class="control has-icon has-icon-right">
+            <input class="input" placeholder="Text input" type="text" value="{{teacher.currentUser?.qualifications}}">
           </p>
 
           </section>
-          <footer class='modal-card-foot'>
-            <a class='button is-primary modal-save'>Save changes</a>
-            <a (click)="modelActive()" class='button modal-cancel'>Cancel</a>
+          <footer class="modal-card-foot">
+            <a class="button is-primary modal-save">Save changes</a>
+            <a (click)="modelActive()" class="button modal-cancel">Cancel</a>
           </footer>
         </div>
       </div>
 
 
 
-
-      <div class='modal' [class.is-active]="courseOn" id='add-course-modal'>
-          <div class='modal-background'></div>
-          <div class='modal-card'>
-            <header class='modal-card-head'>
-              <p class='modal-card-title'>Add Course</p>
-              <button (click)="courseActive()" class='delete'></button>
+      <div class="modal" [class.is-active]="courseOn" id="add-course-modal">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Add Course</p>
+              <button (click)="courseActive()" class="delete"></button>
             </header>
-            <section class='modal-card-body'>
-              <label class='label'>Name</label>
-              <p class='control'>
-                <input class='input' placeholder='Text input' type='text' value = '{{course.currentCourse?.name}}'>
+            <section class="modal-card-body">
+              <label class="label">Name</label>
+              <p class="control">
+                <input class="input" placeholder="Text input" type="text" value = "">
               </p>
-              <label class='label'>language</label>
-              <p class='control has-icon has-icon-right'>
-                <input class='input' placeholder='Text input' type='text' value=' {{course.currentCourse?.language}}'>
+              <label class="label">Description</label>
+              <p class="control">
+                <textarea class="textarea" placeholder="Describe Yourself!"></textarea>
               </p>
-              <label class='label'>Email</label>
-              <p class='control has-icon has-icon-right'>
-                <input class='input' placeholder='Email input' type='text' value=' {{teacher.currentUser?.email}}'>
-                <i class='fa fa-warning'></i>
-                <span class='help is-danger'>This email is invalid</span>
+              <label class="label">Category</label>
+              <p class="control has-icon has-icon-right">
+                <input class="input" placeholder="Text input" type="text" value="">
               </p>
-            
-              <label class='label'>Description</label>
-              <p class='control'>
-                <textarea class='textarea' placeholder='Describe Yourself!'></textarea>
+              <label class="label">language</label>
+              <p class="control has-icon has-icon-right">
+                <input class="input" placeholder="Text input" type="text" value="">
               </p>
-              <div class='content'>
-                <h1>Optional Information</h1>
-              </div>
-            <label class='label'>Fields Of Speciality</label>
-            <p class='control has-icon has-icon-right'>
-              <input class='input' placeholder='Text input' type='text' value=''>
-            </p>
             </section>
-            <footer class='modal-card-foot'>
-              <a class='button is-primary modal-save'>Save changes</a>
-              <a (click)="courseActive()" class='button modal-cancel'>Cancel</a>
+            <footer class="modal-card-foot">
+              <a class="button is-primary modal-save">Save changes</a>
+              <a (click)="courseActive()" class="button modal-cancel">Cancel</a>
             </footer>
           </div>
         </div>
 
 
 
-      <div class='section profile-heading'>
-        <div class='columns is-mobile is-multiline'>
-          <div class='column is-2'>
-            <span class='header-icon image is-128x128 user-profile-image'>
-      <img src="https://bulma.io/images/placeholders/128x128.png">
-      <!-- <img alt='' src='http://placehold.it/300x225'> -->
+      <div class="section profile-heading">
+        <div class="columns is-mobile is-multiline">
+          <div class="column is-2">
+            <span class="header-icon image user-profile-image">
+      <img src={{user.currentUser.image}}>
+      <!-- <img alt="" src="http://placehold.it/300x225"> -->
             </span>
-              <button>Edit Picture</button>
+            <form>
+                <div class="form-group">
+                    <label for="single"></label>
+                    <input type="file" class="form-control" name="single" ng2FileSelect [uploader]="uploader" />                                  
+                 </div>
+    
+                 <button type="button" class="btn btn-success btn-s"
+                  (click)="uploadImg()" [disabled]="!uploader.getNotUploadedItems().length">
+                  <span class="glyphicon glyphicon-upload"></span> Upload
+                 </button>
+                </form>
+    
           </div>
-          <div class='column is-4-tablet is-10-mobile name'>
+          <div class="column is-4-tablet is-10-mobile name">
             <p>
-              <span class='title is-bold'>{{teacher.currentUser?.firstName}} {{teacher.currentUser?.lastName}}</span>
+              <span class="title is-bold">{{teacher.currentUser?.firstName}} {{teacher.currentUser?.lastName}}</span>
               <br>
-              <a class='button is-primary is-outlined' (click)="modelActive()" id='edit-preferences' style='margin: 5px 0'>
+              <a class="button is-primary is-outlined" (click)="modelActive()" id="edit-preferences" style="margin: 5px 0">
                 Edit Profile
               </a>
-              <a class='button is-primary is-outlined' (click)="courseActive()" id='add-course' style='margin: 5px 0'>
+              <a class="button is-primary is-outlined" (click)="courseActive()" id="add-course" style="margin: 5px 0">
                   Add Course
                 </a>
               <br>
             </p>
-            <p class='tagline'>
+            <p class="tagline">
               The users profile bio would go here, can be a few lines or more
             </p>
           </div>
-          <div class='column is-2-tablet is-4-mobile has-text-centered'>
-            <p class='stat-val'>30</p>
-            <p class='stat-key'>Enrolled</p>
+          <div class="column is-2-tablet is-4-mobile has-text-centered">
+            <p class="stat-val">{{user.currentUser.courses.length}}</p>
+            <p class="stat-key">Courses</p>
           </div>
-          <div class='column is-2-tablet is-4-mobile has-text-centered'>
-            <p class='stat-val'>10</p>
-            <p class='stat-key'>Finihsed</p>
+          <div class="column is-2-tablet is-4-mobile has-text-centered">
+            <p class="stat-val">1</p>
+            <p class="stat-key">Students</p>
           </div>
-          <div class='column is-2-tablet is-4-mobile has-text-centered'>
-            <p class='stat-val'>3</p>
-            <p class='stat-key'>lists</p>
+          <div class="column is-2-tablet is-4-mobile has-text-centered">
+            <p class="stat-val">3</p>
+            <p class="stat-key">Categories</p>
           </div>
         </div>
       </div>
-      <div class='profile-options is-fullwidth'>
-        <div class='tabs is-fullwidth is-medium'>
+      <div class="profile-options is-fullwidth">
+        <div class="tabs is-fullwidth is-medium">
           <ul>
-            <li class='link'>
+            <li class="link">
               <a>
-                <span class='icon'>
-                  <i class='fa fa-list'></i>
+                <span class="icon">
+                  <i class="fa fa-list"></i>
                 </span>
                 <span>Enrolled</span>
               </a>
             </li>
-            <li class='link is-active'>
+            <li class="link is-active">
               <a>
-                <span class='icon'>
-                  <i class='fa fa-thumbs-up'></i>
+                <span class="icon">
+                  <i class="fa fa-thumbs-up"></i>
                 </span>
                 <span>Finished</span>
               </a>
             </li>
-            <li class='link'>
+            <li class="link">
               <a>
-                <span class='icon'>
-                  <i class='fa fa-search'></i>
+                <span class="icon">
+                  <i class="fa fa-search"></i>
                 </span>
                 <span>My Searches</span>
               </a>
             </li>
-            <li class='link'>
+            <li class="link">
               <a>
-                <span class='icon'>
-                  <i class='fa fa-balance-scale'></i>
+                <span class="icon">
+                  <i class="fa fa-balance-scale"></i>
                 </span>
                 <span>Compare</span>
               </a>
@@ -216,150 +216,150 @@
           </ul>
         </div>
       </div>
-      <div class='box' style='border-radius: 0px;'>
+      <div class="box" style="border-radius: 0px;">
         <!-- Main container -->
-        <div class='columns'>
-          <div class='column is-2-tablet user-property-count has-text-centered'>
-            <p class='subtitle is-5'>
+        <div class="columns">
+          <div class="column is-2-tablet user-property-count has-text-centered">
+            <p class="subtitle is-5">
               <strong></strong>
               123
               <br>
               properties
             </p>
           </div>
-          <div class='column is-8'>
-            <p class='control has-addons'>
-              <input class='input' placeholder='Search your liked properties' style='width: 100% !important' type='text'>
-              <button class='button'>
+          <div class="column is-8">
+            <p class="control has-addons">
+              <input class="input" placeholder="Search your liked properties" style="width: 100% !important" type="text">
+              <button class="button">
                 Search
               </button>
             </p>
           </div>
         </div>
       </div>
-      <div class='columns is-mobile'>
-        <div class='column is-3-tablet is-6-mobile'>
-          <div class='card'>
-            <div class='card-image'>
-              <figure class='image is-4by3'>
-                <img alt='' src='http://placehold.it/300x225'>
+      <div class="columns is-mobile">
+        <div class="column is-3-tablet is-6-mobile">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img alt="" src="http://placehold.it/300x225">
               </figure>
             </div>
-            <div class='card-content'>
-              <div class='content'>
-                <span class='tag is-dark subtitle'>#1</span>
+            <div class="card-content">
+              <div class="content">
+                <span class="tag is-dark subtitle">#1</span>
                 <p>Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) </p>
               </div>
             </div>
-            <footer class='card-footer'>
-              <a class='card-footer-item'>Compare</a>
-              <a class='card-footer-item'>Share</a>
-              <a class='card-footer-item'>Delete</a>
+            <footer class="card-footer">
+              <a class="card-footer-item">Compare</a>
+              <a class="card-footer-item">Share</a>
+              <a class="card-footer-item">Delete</a>
             </footer>
           </div>
           <br>
         </div>
-        <div class='column is-3-tablet is-6-mobile'>
-          <div class='card'>
-            <div class='card-image'>
-              <figure class='image is-4by3'>
-                <img alt='' src='http://placehold.it/300x225'>
+        <div class="column is-3-tablet is-6-mobile">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img alt="" src="http://placehold.it/300x225">
               </figure>
             </div>
-            <div class='card-content'>
-              <div class='content'>
-                <span class='tag is-dark subtitle'>#2</span>
+            <div class="card-content">
+              <div class="content">
+                <span class="tag is-dark subtitle">#2</span>
                 <p>Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) </p>
               </div>
             </div>
-            <footer class='card-footer'>
-              <a class='card-footer-item'>Compare</a>
-              <a class='card-footer-item'>Share</a>
-              <a class='card-footer-item'>Delete</a>
+            <footer class="card-footer">
+              <a class="card-footer-item">Compare</a>
+              <a class="card-footer-item">Share</a>
+              <a class="card-footer-item">Delete</a>
             </footer>
           </div>
           <br>
         </div>
-        <div class='column is-3'>
-          <div class='card'>
-            <div class='card-image'>
-              <figure class='image is-4by3'>
-                <img alt='' src='http://placehold.it/300x225'>
+        <div class="column is-3">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img alt="" src="http://placehold.it/300x225">
               </figure>
             </div>
-            <div class='card-content'>
-              <div class='content'>
-                <span class='tag is-dark subtitle'>#3</span>
+            <div class="card-content">
+              <div class="content">
+                <span class="tag is-dark subtitle">#3</span>
                 <p>Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) </p>
               </div>
             </div>
-            <footer class='card-footer'>
-              <a class='card-footer-item'>Compare</a>
-              <a class='card-footer-item'>Share</a>
-              <a class='card-footer-item'>Delete</a>
+            <footer class="card-footer">
+              <a class="card-footer-item">Compare</a>
+              <a class="card-footer-item">Share</a>
+              <a class="card-footer-item">Delete</a>
             </footer>
           </div>
           <br>
         </div>
-        <div class='column is-3'>
-          <div class='card'>
-            <div class='card-image'>
-              <figure class='image is-4by3'>
-                <img alt='' src='http://placehold.it/300x225'>
+        <div class="column is-3">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img alt="" src="http://placehold.it/300x225">
               </figure>
             </div>
-            <div class='card-content'>
-              <div class='content'>
-                <span class='tag is-dark subtitle'>#4</span>
+            <div class="card-content">
+              <div class="content">
+                <span class="tag is-dark subtitle">#4</span>
                 <p>Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) </p>
               </div>
             </div>
-            <footer class='card-footer'>
-              <a class='card-footer-item'>Compare</a>
-              <a class='card-footer-item'>Share</a>
-              <a class='card-footer-item'>Delete</a>
+            <footer class="card-footer">
+              <a class="card-footer-item">Compare</a>
+              <a class="card-footer-item">Share</a>
+              <a class="card-footer-item">Delete</a>
             </footer>
           </div>
           <br>
         </div>
       </div>
-      <div class='columns is-mobile'>
-        <div class='column is-3'>
-          <div class='card'>
-            <div class='card-image'>
-              <figure class='image is-4by3'>
-                <img alt='' src='http://placehold.it/300x225'>
+      <div class="columns is-mobile">
+        <div class="column is-3">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img alt="" src="http://placehold.it/300x225">
               </figure>
             </div>
-            <div class='card-content'>
-              <div class='content'>
-                <span class='tag is-dark subtitle'>#5</span>
+            <div class="card-content">
+              <div class="content">
+                <span class="tag is-dark subtitle">#5</span>
                 <p>Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) </p>
               </div>
             </div>
-            <footer class='card-footer'>
-              <a class='card-footer-item'>Compare</a>
-              <a class='card-footer-item'>Share</a>
-              <a class='card-footer-item'>Delete</a>
+            <footer class="card-footer">
+              <a class="card-footer-item">Compare</a>
+              <a class="card-footer-item">Share</a>
+              <a class="card-footer-item">Delete</a>
             </footer>
           </div>
           <br>
         </div>
-        <div class='column is-3'>
-          <div class='card'>
-            <div class='card-image'>
-              <figure class='image is-4by3'>
-                <img alt='' src='http://placehold.it/300x225'>
+        <div class="column is-3">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img alt="" src="http://placehold.it/300x225">
               </figure>
             </div>
-            <div class='card-content'>
-              <div class='content'>
-                <span class='tag is-dark subtitle'>#6</span>
+            <div class="card-content">
+              <div class="content">
+                <span class="tag is-dark subtitle">#6</span>
                 <p>Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) </p>
               </div>
             </div>
-            <footer class='card-footer'>
-              <a class='card-footer-item'>Compare</a>
+            <footer class="card-footer">
+              <a class="card-footer-item">Compare</a>
               <a class="card-footer-item">Share</a>
               <a class="card-footer-item">Delete</a>
             </footer>
@@ -376,7 +376,7 @@
             <div class="card-content">
               <div class="content">
                 <span class="tag is-dark subtitle">#7</span>
-                <p>Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) - these are unique to the user - they will show up as part of a saved listings' info here - but adding notes to a property does not automatically create a saved listing. Likewise, removing this proeprty from saved listings does not auto remove the notes.</p>
+                <p>Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) - these are unique to the user - they will show up as part of a saved listings" info here - but adding notes to a property does not automatically create a saved listing. Likewise, removing this proeprty from saved listings does not auto remove the notes.</p>
               </div>
             </div>
             <footer class="card-footer">
@@ -394,16 +394,16 @@
                 <img alt=""src="http://placehold.it/300x225">
               </figure>
             </div>
-            <div class='card-content'>
-              <div class='content'>
-                <span class='tag is-dark subtitle'>#8</span>
-                <p>Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) - these are unique to the user - they will show up as part of a saved listings' info here - but adding notes to a property does not automatically create a saved listing. Likewise, removing this proeprty from saved listings does not auto remove the notes.</p>
+            <div class="card-content">
+              <div class="content">
+                <span class="tag is-dark subtitle">#8</span>
+                <p>Personal Notes on the Property (can be edited and saved automatically by clicking in and clicking out of text area) - these are unique to the user - they will show up as part of a saved listings" info here - but adding notes to a property does not automatically create a saved listing. Likewise, removing this proeprty from saved listings does not auto remove the notes.</p>
               </div>
             </div>
-            <footer class='card-footer'>
-              <a class='card-footer-item'>Compare</a>
-              <a class='card-footer-item'>Share</a>
-              <a class='card-footer-item'>Delete</a>
+            <footer class="card-footer">
+              <a class="card-footer-item">Compare</a>
+              <a class="card-footer-item">Share</a>
+              <a class="card-footer-item">Delete</a>
             </footer>
           </div>
           <br>

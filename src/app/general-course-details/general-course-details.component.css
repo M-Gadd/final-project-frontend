@@ -1,0 +1,21 @@
+/* .billy{
+  margin-left: 25%;
+} */
+
+
+.image{
+  width: 300px;
+  float: left;
+  margin: 30px;
+}
+
+.info{
+  width: 400px;
+  float: left;
+  margin-top: 90px;
+  margin-left: 50px
+}
+
+.lstBtn{
+ margin: 40px 150px;
+}

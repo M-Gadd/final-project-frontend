@@ -22,7 +22,8 @@ export class TeacherCoursesComponent implements OnInit {
 
     this.user.check()
     .then(() => {
-      this.teacher.getCourses()
+      
+      this.user.getCourses()
       .then((result: Course[])=>{
         console.log(result);
         this.courses = result; // ===> most important line that brings everything together

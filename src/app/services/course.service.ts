@@ -16,11 +16,11 @@ export class CourseService {
     public user:UserService
   ) { }
 
-  postAddCor(id, creds: AddCourseCreds){
+  postAddCor(creds: AddCourseCreds){
     // console.log(this.user.currentUser._id)
     return this.ajaxCourse
     .post(
-      `http://localhost:3000/course/${this.user.currentUser._id}/add`,
+      `${environment.backUrl}/course/${this.user.currentUser._id}/add`,
       creds,
     )
     .toPromise()
@@ -29,12 +29,53 @@ export class CourseService {
     //   return apiResponse;
     // })
   }
+  getDetails(courseId) {
+    return this.ajaxCourse
+      .get(`${environment.backUrl}/${this.user.currentUser.role}/${this.user.currentUser._id}/courses/${courseId}`)
+      .toPromise();
+  }
+
+  getGeneralDetails(courseId) {
+    return this.ajaxCourse
+      .get(`${environment.backUrl}/course/${courseId}`)
+      .toPromise();
+  }
+
+  enroll(courseId, userId) {
+    console.log("ENROLL FUNCTION")
+    return this.ajaxCourse
+      .get(`${environment.backUrl}/course/${courseId}/${userId}/enroll`)
+      .toPromise();
+  }
+
+  getGeneralCourses(){
+    return this.ajaxCourse
+    .get(`${environment.backUrl}/course/homecourses`)
+    .toPromise();
+}
+
+postEditCourse(courseId, creds: EditCourseCreds){
+  console.log("HELLO AGGAAIN")
+
+  return this.ajaxCourse
+  .put(
+  `${environment.backUrl}/course/${courseId}/edit`,
+  creds,
+  {withCredentials: true}
+)
+.toPromise()
+.then((apiResponse: any)=>{
+  this.currentCourse = apiResponse.courseInfo;
+  return apiResponse;
+});
+
+}
 
 
 //   postSignup(role, creds: SignupCredentials) {
 //     return this.ajaxUser
 //       .post(
-//       `http://localhost:3000/${role}/signup`,
+//       `${environment.backUrl}/${role}/signup`,
 //       creds,
 //       {withCredentials: true}
 //     )
@@ -48,14 +89,14 @@ export class CourseService {
 }
 
 export class Course {
-_id: string
+_id: string;
 name: string;
 description: string;
-category: string 
+category: string;
 language: string;
 image: string;
-author:string
-videos: [object];
+author:string;
+videos: [{vidName:string, videoUrl:string}];
 students: [object];
 qna: [object];
 status: string;
@@ -77,11 +118,6 @@ name: string;
 description: string;
 category: string 
 language: string;
-image: string;
-author:string
-videos: [object];
-students: [object];
-qna: [object];
 }
 
 

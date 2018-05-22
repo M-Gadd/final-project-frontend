@@ -5,7 +5,7 @@
 .stuTeac{
   width: 500px;
   margin-left: 30%;
-  margin-top: 20%;
+  margin-top: 15%;
 }
 
 .choiceBtn{
@@ -15,6 +15,7 @@
 
 .center{
   width: 500px;
+  margin-top: 10%
 }
 
 .buttonn{
@@ -22,5 +23,5 @@
 }
 
 .texCen{
-  margin-left: 38%;  
+  margin-left: 41%;  
 }

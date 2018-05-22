@@ -1,10 +1,64 @@
-<h2>My Courses</h2>
+ <h2>My Courses</h2>
 
-<ul *ngFor= "let oneCourse of courses">
-  <li>{{oneCourse.name}}</li>
-  <li>{{oneCourse.language}}</li>
-</ul>
-
+<!-- <ul *ngFor= "let oneCourse of courses">
+  <li>{{oneCourse?.name}}</li>
+  <li>{{oneCourse?.language}}</li>
+  <li>{{user.currentUser.role.curreentUser.name}}</li>
+</ul>  -->
+<div>
 <a class='button is-primary is-outlined' routerLink="/course/add"  id='add-course' style='margin: 5px 0'>
   Add New Course
   </a>
+</div>
+
+
+
+  <div width="200px" *ngFor= "let oneCourse of courses" class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img width="200px" src={{oneCourse.image}} alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <!-- <figure class="image is-48x48"> -->
+              <!-- <img width="50px"  src={{user.currecntUser.image}} alt=""> -->
+            <!-- </figure> -->
+          </div>
+          <div class="media-content">
+            <p class="title is-4">{{oneCourse?.name}}</p>
+            <p class="subtitle is-6">{{user.currentUser.name}}</p>
+            <a class = "button is-primary is-outlined" [routerLink] = "['/', user.currentUser?.role, user.currentUser?._id, 'courses', oneCourse._id ]"> 
+              See Details</a>
+          </div>
+        </div>
+    
+        <!-- <div class="content"> --> 
+          <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Phasellus nec iaculis mauris. -->
+          <!-- <a>@bulmaio</a>. -->
+          <!-- <a href="#">#css</a> <a href="#">#responsive</a> -->
+          <!-- <br> -->
+          <!-- <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time> -->
+        <!-- </div>
+      </div>
+    </div>
+
+
+    <!-- <div  *ngFor= "let oneCourse of courses" class='carousel carousel-animated carousel-animate-slide' data-size="5">
+        <div class='carousel-container'>
+          <div class='carousel-item is-active'>
+            <figure width="200px" class="image"><img src="https://bulma.io/images/placeholders/640x320.png"></figure>
+            <p>{{oneCourse?.name}}</p>
+          </div>
+    
+        <div class="carousel-navigation is-centered">
+          <div class="carousel-nav-left">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+          </div>
+          <div class="carousel-nav-right">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div> -->

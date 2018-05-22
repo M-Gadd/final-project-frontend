@@ -30,7 +30,14 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AdminTeachersComponent } from './admin/admin-teachers/admin-teachers.component';
 import { AdminCoursesComponent } from './admin/admin-courses/admin-courses.component';
 import { AdminService } from './services/admin.service';
-import { FileSelectDirective, FileUploader, FileDropDirective } from 'ng2-file-upload';
+import { FileSelectDirective, FileUploader, FileUploadModule } from 'ng2-file-upload';
+import { TeacherCourseDetailsComponent } from './teacher-course-details/teacher-course-details.component';
+import { UserCourseDetailsComponent } from './user-course-details/user-course-details.component';
+import { GeneralCourseDetailsComponent } from './general-course-details/general-course-details.component';
+import { InActiveTeachersComponent } from './admin/in-active-teachers/in-active-teachers.component';
+import { InActiveCoursesComponent } from './admin/in-active-courses/in-active-courses.component';
+import { EnrollComponent } from './enroll/enroll.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 
 @NgModule({
@@ -56,16 +63,23 @@ import { FileSelectDirective, FileUploader, FileDropDirective } from 'ng2-file-u
     LandingPageComponent,
     AdminTeachersComponent,
     AdminCoursesComponent,
-    FileSelectDirective,
-    FileDropDirective
+    // FileSelectDirective,
+    TeacherCourseDetailsComponent,
+    UserCourseDetailsComponent,
+    GeneralCourseDetailsComponent,
+    InActiveTeachersComponent,
+    InActiveCoursesComponent,
+    EnrollComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FileUploadModule
   ],
-  providers: [UserService, TeacherService, CourseService,AdminService],
+  providers: [UserService, TeacherService, CourseService, AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

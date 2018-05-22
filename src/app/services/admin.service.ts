@@ -14,19 +14,19 @@ export class AdminService {
 
   getUsers(){
     return this.ajaxAdmin
-      .get(`http://localhost:3000/admin/users`)
+      .get(`${environment.backUrl}/admin/users`)
       .toPromise();
   }
 
   getTeachers(){
     return this.ajaxAdmin
-      .get(`http://localhost:3000/admin/teachers`)
+      .get(`${environment.backUrl}/admin/teachers`)
       .toPromise();
   }
 
   getCourses(){
     return this.ajaxAdmin
-      .get(`http://localhost:3000/admin/courses`)
+      .get(`${environment.backUrl}/admin/courses`)
       .toPromise();
   }
 

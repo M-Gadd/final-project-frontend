@@ -24,7 +24,7 @@ export class UserService {
     //GET /checklogin
     check(){
       return this.ajaxUser // "with credenytials mean send the cookies from the backend"
-      .get(`http://localhost:3000/user/checklogin`, {withCredentials: true})
+      .get(`${environment.backUrl}/user/checklogin`, {withCredentials: true})
       .toPromise()
       .then((apiResponse: any)=>{
         this.currentUser = apiResponse.userInfo;
@@ -36,7 +36,7 @@ export class UserService {
     postSignup(role, creds: SignupCredentials) {
       return this.ajaxUser
         .post(
-        `http://localhost:3000/${role}/signup`,
+        `${environment.backUrl}/${role}/signup`,
         creds,
         {withCredentials: true}
       )
@@ -51,7 +51,7 @@ export class UserService {
     postLogin(creds: LoginCredentials) {
       return this.ajaxUser
         .post(
-          `http://localhost:3000/user/login`,
+          `${environment.backUrl}/user/login`,
           creds,
           {withCredentials: true}
         )
@@ -64,7 +64,7 @@ export class UserService {
     //GET /logout
     logout(){
       return this.ajaxUser
-        .get(`http://localhost:3000/user/logout`, {withCredentials: true})
+        .get(`${environment.backUrl}/user/logout`, {withCredentials: true})
         .toPromise()
         .then((apiResponse: any)=>{
           this.currentUser = apiResponse.userInfo;
@@ -77,23 +77,16 @@ export class UserService {
 
     getCourses(){
       return this.ajaxUser
-      .get(`http://localhost:3000/user/${this.currentUser._id}/courses`)
+      .get(`${environment.backUrl}/${this.currentUser.role}/${this.currentUser._id}/courses`)
       .toPromise();
   }
 
-//   addPicture(creds: UploadImgCreds){
-//     return this.ajaxUser
-//     .post(
-//     `http://localhost:3000/user/${this.currentUser._id}/editpicture`,
-//     creds,
-//     {withCredentials: true}
-//   )
-//   .toPromise()
-//   .then((apiResponse: any)=>{
-//     this.currentUser = apiResponse.userInfo;
-//     return apiResponse;
-//   });
-// };  
+  getGeneralCourses(){
+    return this.ajaxUser
+    .get(`${environment.backUrl}/${this.currentUser.role}/homecourses`)
+    .toPromise();
+}
+
   };
 
 

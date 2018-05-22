@@ -21,7 +21,7 @@
             <p class='control has-icon has-icon-right'>
               <input class='input' placeholder='Email input' type='text' value='{{user.currentUser?.email}}'>
               <i class='fa fa-warning'></i>
-              <span class='help is-danger'>This email is invalid</span>
+              <!-- <span class='help is-danger'>This email is invalid</span> -->
             </p>
             <div class='control'>
               <div class='control-label is-pulled-left'>
@@ -118,16 +118,16 @@
             </p>
           </div>
           <div class='column is-2-tablet is-4-mobile has-text-centered'>
-            <p class='stat-val'>30</p>
+            <p class='stat-val'>{{user.currentUser.courses.length}}</p>
             <p class='stat-key'>Enrolled</p>
           </div>
           <div class='column is-2-tablet is-4-mobile has-text-centered'>
-            <p class='stat-val'>10</p>
+            <p class='stat-val'>0</p>
             <p class='stat-key'>Finihsed</p>
           </div>
           <div class='column is-2-tablet is-4-mobile has-text-centered'>
             <p class='stat-val'>3</p>
-            <p class='stat-key'>lists</p>
+            <p class='stat-key'>Categories</p>
           </div>
         </div>
       </div>

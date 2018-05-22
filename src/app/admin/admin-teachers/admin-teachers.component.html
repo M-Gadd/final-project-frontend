@@ -14,6 +14,7 @@
 
 
 <div *ngFor="let oneTeacher of teachers" class='section profile-heading'>
+  <div *ngIf = "oneTeacher.status === 'active'">
     <div class='columns is-mobile is-multiline'>
       <div class='column is-2'>
         <span class='header-icon image is-128x128 user-profile-image'>
@@ -29,6 +30,11 @@
           <a class='button  is-primary is-outlined'  style='margin: 5px 0'>
             Check Profile
           </a>
+
+          <a class='button  is-danger is-outlined'  style='margin: 5px 0'>
+              In-active
+            </a>
+
           <br>
         </p>
         <p class='tagline'>
@@ -36,16 +42,17 @@
         </p>
       </div>
       <div class='column is-2-tablet is-4-mobile has-text-centered'>
-        <p class='stat-val'>30</p>
+        <p class='stat-val'>{{oneTeaher.courses.length}}</p>
         <p class='stat-key'>Courses</p>
       </div>
       <div class='column is-2-tablet is-4-mobile has-text-centered'>
-        <p class='stat-val'>10</p>
+        <p class='stat-val'>1</p>
         <p class='stat-key'>Students</p>
       </div>
       <div class='column is-2-tablet is-4-mobile has-text-centered'>
         <p class='stat-val'>3</p>
-        <p class='stat-key'>lists</p>
+        <p class='stat-key'>Categories</p>
       </div>
     </div>
+  </div>
   </div>

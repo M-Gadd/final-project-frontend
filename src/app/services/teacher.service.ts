@@ -69,7 +69,7 @@ export class TeacherService {
 
   getCourses(){
     return this.ajaxTeacher
-    .get(`http://localhost:3000/teacher/${this.currentUser._id}/courses`)
+    .get(`${environment.backUrl}/teacher/${this.currentUser._id}/courses`)
     .toPromise();
 }
 };

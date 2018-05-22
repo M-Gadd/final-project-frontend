@@ -2,3 +2,39 @@
 /* section{
   background-image: "../assets/images/knowledge-1052014_1920.jpg";
 } */
+
+/* *{
+  background-image: "../assets/images/knowledge-1052014_1920.jpg"
+}
+
+nav{
+  color: black;
+} */
+
+
+/* .container{
+  background-image:  url(../assets/images/knowledge-1052014_1920.jpg);
+} */
+
+
+footer{
+  height: 60px;
+}
+
+.navbar-item{
+  color: white
+}
+
+.logo{
+  color: rgb(30, 163, 163)
+}
+
+.adminBtn{
+  /* position: absolute;
+  left: 92% */
+  margin-bottom: 10px;
+}
+
+.navbar{
+  margin-bottom: 10px
+}

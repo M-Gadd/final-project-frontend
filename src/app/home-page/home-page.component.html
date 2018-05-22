@@ -1,0 +1,158 @@
+
+  <div class="lanPage" *ngIf="!user.currentUser">
+
+    <img class="firstImg" src="../../assets/images/arm-break-business-257897.jpg" alt="">
+    <img class="secondImg"  src="../../assets/images/knowledge-1052014_1920.jpg" alt="">
+    <img class="thirdImg"  src="../../assets/images/learn-977543_1920.jpg" alt="">
+    <img class="fourthImg"  src="../../assets/images/app-browser-coffee-6335.jpg" alt="">
+
+
+      <div class="firstPara">
+      <h1 class="title">Welcome</h1>
+      <br>
+      <h2 class="title">To <span class="logo">E</span>-levate</h2>
+    </div>
+
+    
+    <div class=" subtitle secondPara">
+      <h1 >We understand that people have been </h1>
+      <h1 >struggling with educational systems for a few decades</h1>
+      <h1>And we decided to help you get all the education you need </h1>
+      <h1>At your own comfort and pace</h1>
+      <br>
+      <!-- <h2 class="title">To <span class="logo">E</span>-levate</h2> -->
+    </div>
+
+    <div class="thirdPara">
+        <h1 class="title" >Want to be a Student?</h1>
+        <br>
+        <a class="button is-primary" routerLink="/user/signup">Sign Up Here</a>
+      </div>
+
+      <div class="fourthPara">
+          <h1 class="title" >Want to be a Teacher?</h1>
+          <br>
+          <a class="button is-primary" routerLink="/teacher/signup">Sign Up Here</a>
+        </div>
+    
+  </div>
+  
+  
+
+
+<div *ngIf= "user.currentUser">
+
+  <h3 class="subtitle"> <b>Software Development</b>  </h3>
+<div  class="flex">
+  <div width="250px" *ngFor= "let oneCourseSD of coursesSD"  class="card">
+    <!-- <div *ngIf="oneCourse.category === 'SD'" > -->
+      <div class="card-image">
+        <figure class="image is-4by4">
+          <img width="200px" src={{oneCourseSD.image}} alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <!-- <figure class="image is-48x48"> -->
+              <!-- <img width="50px"  src={{user.currecntUser.image}} alt=""> -->
+            <!-- </figure> -->
+          </div>
+          <div class="media-content">
+            <p class="subtitle is-4">{{oneCourseSD?.name}}</p>
+            <a class = " mineBtn2 button is-primary is-outlined" [routerLink] = "['/course', oneCourseSD._id ]"> 
+              See Details</a>
+                <br>
+              <div *ngIf = "user.currentUser && user.currentUser.role === 'user'">
+                  <a class=" mineBtn button is-primary is-outlined" [routerLink] = "['/course', oneCourseSD._id, user.currentUser?._id, 'enroll']">Enroll</a>
+              </div>
+          </div>
+            <!-- <br>
+            <br> -->
+            <!-- <p class="subtitle is-6">{{user.currentUser.name}}</p> -->
+            <!-- <a class = "button is-primary is-outlined" [routerLink] = `['/{{user.currentUser?.role}}/{{user.currentUser?._id}}/courses', oneCourse._id ]`> 
+              See Details</a> -->
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
+</div>
+
+
+<br>
+
+
+    <h3 class="subtitle"> <b>Marketing</b> </h3>
+  <div  class="flex">
+    <div width="250px" *ngFor= "let oneCourseMR of coursesMR" class="card">
+      <!-- <div *ngIf="oneCourse.category === 'Marketing'" > -->
+        <div class="card-image">
+          <figure class="image is-4by4">
+            <img width="200px" src={{oneCourseMR.image}} alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <!-- <figure class="image is-48x48"> -->
+                <!-- <img width="50px"  src={{user.currecntUser.image}} alt=""> -->
+              <!-- </figure> -->
+            </div>
+            <div class="media-content">
+              <p class="subtitle is-4">{{oneCourseMR?.name}}</p>
+              <a class = " mineBtn2 button is-primary is-outlined" [routerLink] = "['/course', oneCourseMR._id ]"> 
+                See Details</a>
+                  <br>
+                <div *ngIf = "user.currentUser && user.currentUser.role === 'user'">
+                    <a class=" mineBtn button is-primary is-outlined" [routerLink] = "['/course', oneCourseMR._id, user.currentUser?._id, 'enroll']">Enroll</a>
+                </div>
+            </div>
+
+              <!-- <p class="subtitle is-6">{{user.currentUser.name}}</p> -->
+              <!-- <a class = "button is-primary is-outlined" [routerLink] = `['/{{user.currentUser?.role}}/{{user.currentUser?._id}}/courses', oneCourse._id ]`> 
+                See Details</a> -->
+            </div>
+          </div>
+        <!-- </div> -->
+      </div>
+  <!-- </div> -->
+</div>
+
+  <br>
+  <div class="size">
+      <h3 class="subtitle"> <b>Human Resources</b> </h3>
+    <div  class="flex">
+      <div width="250px" *ngFor= "let oneCourseHR of coursesHR" class="card">
+        <!-- <div *ngIf="oneCourse.category === 'HR'" > -->
+          <div class="card-image">
+            <figure class="image is-4by4">
+              <img width="200px" src={{oneCourseHR.image}} alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <!-- <figure class="image is-48x48"> -->
+                  <!-- <img width="50px"  src={{user.currecntUser.image}} alt=""> -->
+                <!-- </figure> -->
+              </div>
+              <div class="media-content">
+                <p class="subtitle is-4">{{oneCourseHR?.name}}</p>
+                <a class = " mineBtn2 button is-primary is-outlined" [routerLink] = "['/course', oneCourseHR._id ]"> 
+                  See Details</a>
+                    <br>
+                  <div *ngIf = "user.currentUser && user.currentUser.role === 'user'">
+                      <a class=" mineBtn button is-primary is-outlined" [routerLink] = "['/course', oneCourseHR._id, user.currentUser?._id, 'enroll']">Enroll</a>
+                  </div>
+              </div>
+                <!-- <p class="subtitle is-6">{{user.currentUser.name}}</p> -->
+                <!-- <a class = "button is-primary is-outlined" [routerLink] = `['/{{user.currentUser?.role}}/{{user.currentUser?._id}}/courses', oneCourse._id ]`> 
+                  See Details</a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  <!-- </div> -->
+  </div>
+  

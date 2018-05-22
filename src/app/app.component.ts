@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from './services/user.service';
 import { TeacherService } from './services/teacher.service';
+import { CourseService, Course } from './services/course.service';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +13,12 @@ export class AppComponent {
 
   turnOff = true
 
+  courses: Course[] = [];
 
   constructor(
     public user: UserService,
-    public teacher: TeacherService
+    public teacher: TeacherService,
+    public courseServ: CourseService
   ){}
 
   ngOnInit() {
@@ -25,6 +28,16 @@ export class AppComponent {
       console.log("App login check error");
       console.log(err);
     });
+
+    this.courseServ.getGeneralCourses()
+    .then((result: Course[])=>{
+      console.log(result);
+      this.courses = result; // ===> most important line that brings everything together
+    })
+    .catch((err) =>{
+      console.log("course list Error")
+      console.log(err);
+    })
   }
 
   logoutClick(){

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService, UploadImgCreds } from '../services/user.service';
 import { Router } from '@angular/router';
-import {FileUploader, FileSelectDirective} from 'ng2-file-upload/ng2-file-upload';
+import {FileUploader} from 'ng2-file-upload';
+import { environment } from '../../environments/environment';
+
 
 @Component({
   selector: 'app-user-profile',
@@ -15,7 +17,7 @@ export class UserProfileComponent implements OnInit {
   modeOn = false;
 
   public uploader: FileUploader = new FileUploader({
-    url: `http://localhost:3000/user/${this.user.currentUser._id}/editpicture`
+    url: `${environment.backUrl}/user/${this.user.currentUser._id}/editpicture`
   });
 
   feedback: string;
@@ -49,10 +51,10 @@ export class UserProfileComponent implements OnInit {
 
   uploadImg(){
     // this.uploader.onBuildItemForm = ((item)=>{
-    //   item.url = `http://localhost:3000/user/${this.user.currentUser._id}/editpicture`
+    //   item.url = `${environment.backUrl}/user/${this.user.currentUser._id}/editpicture`
 
     // })
-    console.log(`http://localhost:3000/user/${this.user.currentUser._id}/editpicture`);
+    console.log(`${environment.backUrl}/user/${this.user.currentUser._id}/editpicture`);
    
     this.uploader.uploadAll();
   }
